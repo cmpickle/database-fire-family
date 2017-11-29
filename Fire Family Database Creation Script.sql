@@ -54,6 +54,7 @@ CREATE TABLE Product
     Price                   DECIMAL(10,2)   NOT NULL,
     Dimensions              VARCHAR(200)    NULL,
     SKU                     SMALLINT        NOT NULL,
+    Deleted                 tinyint(1)      NOT NULL,
     PRIMARY KEY(ProductID)
 );
 
