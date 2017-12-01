@@ -98,6 +98,10 @@ ALTER TABLE Product
     ON DELETE CASCADE
     ON UPDATE CASCADE;
 
+-- Add Unique Constraints
+ALTER TABLE Product
+  ADD CONSTRAINT unique_key_product_sku
+  UNIQUE (SKU);
 
 -- Add defaults
 ALTER TABLE InventoryScanning
