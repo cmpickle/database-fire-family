@@ -54,6 +54,7 @@ CREATE TABLE Product
     Price                   DECIMAL(10,2)   NOT NULL,
     Dimensions              VARCHAR(200)    NULL,
     SKU                     SMALLINT        NOT NULL,
+    Deleted                 tinyint(1)      NOT NULL,
     PRIMARY KEY(ProductID)
 );
 
@@ -97,6 +98,10 @@ ALTER TABLE Product
     ON DELETE CASCADE
     ON UPDATE CASCADE;
 
+-- Add Unique Constraints
+ALTER TABLE Product
+  ADD CONSTRAINT unique_key_product_sku
+  UNIQUE (SKU);
 
 -- Add defaults
 ALTER TABLE InventoryScanning
